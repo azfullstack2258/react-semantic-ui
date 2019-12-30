@@ -1,24 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
+import 'semantic-ui-css/semantic.min.css';
 import './App.css';
+
+import Table from './components/Table';
+
+const tableData = [{
+    "username": "richard",
+    "email": "richard@sample.com",
+    "age": 20
+  },
+  {
+    "username": "michael",
+    "email": "michael@sample.com",
+    "age": 23
+  },
+  {
+    "username": "diego",
+    "email": "diego@sample.com",
+    "age": 24
+  },
+  {
+    "username": "rene",
+    "email": "rene@sample.com",
+    "age": 22
+  },
+  {
+    "username": "agustin",
+    "email": "agustin@sample.com",
+    "age": 32
+}];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Table data={tableData} />    
     </div>
   );
 }
