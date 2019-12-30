@@ -1,11 +1,24 @@
 import _ from 'lodash';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Table, Input } from 'semantic-ui-react';
+import { print1To100, isIsogram, removeVowels } from '../helpers';
 
 const CustomTable = ({ data: initialData }) => {
   const [column, setColumn] = useState(null);
   const [data, setData] = useState(initialData);
   const [direction, setDirection] = useState(null);
+
+  useEffect(() => {
+    // Just for testing javascript functions
+    console.log(print1To100());
+    console.log(isIsogram('Word'));
+    console.log(isIsogram('tavares'));
+    console.log(isIsogram('hansen'));
+    console.log(isIsogram('thomas'));
+    console.log(removeVowels('I have never seen a thin person drinking Diet Coke.'));
+    console.log(removeVowels('We’re gonna build a wall!'));
+    console.log(removeVowels('Happy Thanksgiving to all--even the haters and losers!'));
+  }, [initialData.length]);
 
   const handleSort = clickedColumn => () => {
     if (column !== clickedColumn) {
